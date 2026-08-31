@@ -25,8 +25,22 @@ export TMPDIR=/root/pip-tmp
 wget -O requirements.txt https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/requirements.txt
 python3 -m pip install -r requirements.txt
 
-# Download the demo notebook
-wget -O introduction-to-autograd.ipynb https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/section_1/demos/010-095-introduction-to-autograd/introduction-to-autograd.ipynb
+# Download the lab questions
+LAB_BASE_URL=https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/section_2/labs/020-030-datasets-and-dataloaders
+for question_number in {1..12}; do
+    wget -O "question_$question_number.py" \
+        "$LAB_BASE_URL/question_$question_number.py"
+done
+
+# Download the annotation file and image dataset used by the lab
+wget -O labels.csv "$LAB_BASE_URL/labels.csv"
+mkdir -p images/cat images/dog
+for class_name in cat dog; do
+    for image_number in {1..5}; do
+        wget -O "images/$class_name/$class_name-$image_number.jpg" \
+            "$LAB_BASE_URL/images/$class_name/$class_name-$image_number.jpg"
+    done
+done
 
 # Install and start code server
 curl -fsSL https://code-server.dev/install.sh | sh

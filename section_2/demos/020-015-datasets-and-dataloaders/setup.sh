@@ -26,7 +26,18 @@ wget -O requirements.txt https://raw.githubusercontent.com/kodekloudhub/pytorch-
 python3 -m pip install -r requirements.txt
 
 # Download the demo notebook
-wget -O introduction-to-autograd.ipynb https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/section_1/demos/010-095-introduction-to-autograd/introduction-to-autograd.ipynb
+DEMO_BASE_URL=https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/section_2/demos/020-015-datasets-and-dataloaders
+wget -O datasets-and-dataloaders.ipynb "$DEMO_BASE_URL/datasets-and-dataloaders.ipynb"
+
+# Download the annotation file and image dataset used by the notebook
+wget -O labels.csv "$DEMO_BASE_URL/labels.csv"
+mkdir -p images/cat images/dog
+for class_name in cat dog; do
+    for image_number in {1..5}; do
+        wget -O "images/$class_name/$class_name-$image_number.jpg" \
+            "$DEMO_BASE_URL/images/$class_name/$class_name-$image_number.jpg"
+    done
+done
 
 # Install and start code server
 curl -fsSL https://code-server.dev/install.sh | sh
