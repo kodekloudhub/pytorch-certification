@@ -25,10 +25,9 @@ export TMPDIR=/root/pip-tmp
 wget -O requirements.txt https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/requirements.txt
 python3 -m pip install -r requirements.txt
 
-# Download the demo notebook and standalone Python reference
+# Download the demo notebook
 DEMO_BASE_URL=https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/section_3/demos/030-075-loss-functions-and-optimizers
 wget -O loss-functions-and-optimizers.ipynb "$DEMO_BASE_URL/loss-functions-and-optimizers.ipynb"
-wget -O loss_functions_and_optimizers.py "$DEMO_BASE_URL/loss_functions_and_optimizers.py"
 
 # Install and start code server
 curl -fsSL https://code-server.dev/install.sh | sh
