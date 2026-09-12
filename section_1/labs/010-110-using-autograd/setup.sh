@@ -25,6 +25,13 @@ export TMPDIR=/root/pip-tmp
 wget -O requirements.txt https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/requirements.txt
 python3 -m pip install -r requirements.txt
 
+# Download the lab questions
+LAB_BASE_URL=https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/section_1/labs/010-110-using-autograd
+for question_number in {1..6}; do
+    wget -O "question_$question_number.py" \
+        "$LAB_BASE_URL/question_$question_number.py"
+done
+
 # Install and start code server
 curl -fsSL https://code-server.dev/install.sh | sh
 cat /root/.config/code-server/config.yaml

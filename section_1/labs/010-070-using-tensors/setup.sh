@@ -25,6 +25,18 @@ export TMPDIR=/root/pip-tmp
 wget -O requirements.txt https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/requirements.txt
 python3 -m pip install -r requirements.txt
 
+# Download the lab questions
+LAB_BASE_URL=https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/section_1/labs/010-070-using-tensors
+for question_number in {1..16}; do
+    wget -O "question_$question_number.py" \
+        "$LAB_BASE_URL/question_$question_number.py"
+done
+
+# Download the image required by Question 8 at its expected course path
+mkdir -p /root/pytorch-certification/images
+wget -O /root/pytorch-certification/images/pytorch-logo.png \
+    https://raw.githubusercontent.com/kodekloudhub/pytorch-certification/main/images/pytorch-logo.png
+
 # Install and start code server
 curl -fsSL https://code-server.dev/install.sh | sh
 cat /root/.config/code-server/config.yaml

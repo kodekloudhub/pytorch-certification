@@ -8,7 +8,7 @@ import torch
 # Initialize Model
 model = ____
 # load the latest checkpoint
-checkpoint = ____.____("____", weights_only='true')
+checkpoint = ____.____("____", weights_only=True)
 # Load the parameters to our model
 ____.____(checkpoint['____'])
 # Print the model

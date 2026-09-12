@@ -28,7 +28,7 @@ class CustomImageBreastCancerDataSet(Dataset):
         label = self.image_labels.iloc[idx, 1]
         image = self.transform(image)
         label = self.target_transform(label)
-        
+
         return image, label
 
 
@@ -37,24 +37,24 @@ label_encoding = {____: ____, ____: ____}
 
 # Create the Training Dataset
 ____ = ____(
-    annotations_file=____, 
-    image_dir='data', 
-    transform=t____, 
+    annotations_file=____,
+    image_dir='.',
+    transform=t____,
     target_transform=____
 )
 
 # Create the Validation Dataset
 ____ = ____(
-    annotations_file=____, 
-    image_dir='data', 
-    transform=____, 
+    annotations_file=____,
+    image_dir='.',
+    transform=____,
     target_transform=____
 )
 
 # Create the Testing Dataset with deterministic transforms.
 ____ = ____(
     annotations_file=____,
-    image_dir='data',
+    image_dir='.',
     transform=____,
     target_transform=____
 )

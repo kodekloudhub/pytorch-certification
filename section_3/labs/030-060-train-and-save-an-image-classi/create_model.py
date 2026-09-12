@@ -1,5 +1,5 @@
 """
-Create an instance of our netowork
+Create an instance of our network.
 """
 from breast_cancer_net import BreastCancerClassification
 

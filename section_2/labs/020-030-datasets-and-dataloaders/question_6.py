@@ -8,4 +8,4 @@ import ____
 transformations = torchvision.transforms.Compose([torchvision.transforms.ToTensor()])
 
 # Create a dataset using the images folder called cd_dataset.
-____ = ____.____._____(____=____, transform=transformations)
+____ = ____.____.____(____=____, transform=transformations)

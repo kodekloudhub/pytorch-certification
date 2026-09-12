@@ -1,9 +1,9 @@
-""""
-Apply a pipeline to a Dataset. 
+"""
+Apply a pipeline to a Dataset.
 
-The pipeline will have 2 steps. 
-1. The first step is to transform an image into a tensor. 
-2. The second step is to normalize an image using 0.5 for all mean and standard deviation values for RGB channels. 
+The pipeline will have 2 steps.
+1. The first step is to transform an image into a tensor.
+2. The second step is to normalize the one-channel MNIST image using 0.5 for both its mean and standard deviation.
 
 Create a dataset from the MNIST preloaded dataset and apply pipeline to the dataset.
 
@@ -18,5 +18,5 @@ transform = ____.____([
     ____.____(____)
 ])
 
-# Create the dataset 
+# Create the dataset
 mnist_ds = ____.____.____(root='mnist', train=False, download=True, ____=____)
